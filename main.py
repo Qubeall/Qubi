@@ -1,7 +1,11 @@
-# 1 task
-pi = 3.141592653589793
-print('%.5f' % (pi))
-print('%.7s' % (pi))
-print('{} {}'.format(3.1, 4159))
+# 2 task
+a = 3.54214
+b = round(a)
+print(b)
+
+c = 6.542142
+d = round(c)
+print(d)
+
 
 
