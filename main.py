@@ -1,5 +1,4 @@
-# task 5
-print("Which of the following are the ways to format strings in Python?")
-
-print('f-strings')
-
+# task 6
+print('Which of the following examples will correctly output formatted strings?')
+print("option d is correctly output formatted strings")
+print('option c isn\'t correct|')
