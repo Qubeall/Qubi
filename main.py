@@ -1,11 +1,6 @@
-# 2 task
-a = 3.54214
-b = round(a)
-print(b)
+# 3 task
 
-c = 6.542142
-d = round(c)
-print(d)
-
-
-
+movie='Jurassic World'
+director='Steven Spielberg'
+year= 2015
+print("{} (dir. {}) came out in {}.".format(movie, director, year))
