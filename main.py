@@ -1,4 +1,6 @@
-# task 6
-print('Which of the following examples will correctly output formatted strings?')
-print("option d is correctly output formatted strings")
-print('option c isn\'t correct|')
+# task 8
+#What will be the output of this code?
+
+#print('{0} and {2} met yesterday in {1}.'.format('Angelina Jolie', 'Paris', 'Leonardo DiCaprio'))
+print('the output will be:')
+print('{0} and {2} met yesterday in {1}.'.format('Angelina Jolie', 'Paris', 'Leonardo DiCaprio'))
