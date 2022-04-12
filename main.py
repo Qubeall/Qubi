@@ -1,12 +1,4 @@
-# task 5 slice
-e = str(input('Enter your Email:'))
-
-if '@' in e:
-  a = e.split('@')[0]
-else:
-  print('Wrong Email')
-if '.' in e:
-  a = e.split('@') [0]
-else:
-  print('Wrong Email')
-print(a)
+# task 6 slice
+nums = [n for n in range(0, 101)]
+numb = ([n for n in range (len(nums))] [::5])
+print (numb)

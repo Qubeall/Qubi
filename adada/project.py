@@ -1,4 +1,37 @@
-pieces = [[0,0] ,[0,1] ,[0,2] , [0, 3] , [0,4] , [0,5] , [0,6] ,[1,1] ,[1,2] ,[1,3], [1,4] ,[1,5] , [1,6] , [2,2], [2,3] ,[2,4] ,[2,5] , [2,6] ,[3,3] , [3,4] , [3,5] , [3,6] , [4,4] ,[4,5] ,[4,6] ,[5,5],[5,6] , [6,6]]
+from random import randint, shuffle
+
+stock = [[i,j] for i in range(7) for j in range(i,7)]
+doubles = stock [:-4:-2]
+on_hands = 7
+
+
+while not any([double in stock[:on_hands *2] for double in doubles]):
+  shuffle(stock)
+
+
+for double in doubles:
+  if double in stock[:on_hands * 2]:
+    snake = stock.pop(stock.index(double))
+    break
+computer, player = stock[:on_hands - 1], stock[on_hands - 1:on_hands * 2 - 1]
+if randint(1, 2) == 2:
+  player, computer = computer, player
+
+stock = stock[on_hands *2 - 1:]
+
+next_one = 'computer' if len(computer) > len(player) else 'player'
+
+print('Stock pieces: {}\n\
+    Computer pieces: {}\n\
+      Player pieces: {}\n\
+      Domino snake: [{}]\n\
+             Status: {}'.\
+             format(stock, computer, player, snake, next_one))
+  
+
+
+
+
 
 
 
