@@ -1,4 +1,6 @@
-# task 3 slice
-print('What are the default values for start, stop and step?')
+# task 4 slice
+str1 = 'no clouds here to spy on pets'
+str2 = str1[0::5]
+str3 = str2[::-1]
+print('The cypher is {}'.format (str3))
 
-print('[0:len(sequence):1]')
