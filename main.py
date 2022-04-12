@@ -1,8 +1,25 @@
-# task 2 slice
+# task 1 slice
 
-series = ['Game of Thrones', 'Riverdale', 'Shameless', 'Doctor Who', 'Friends']
-print('The result is %s' % series[3:5])
-# or
-print('The result is {}'.format(series[3:5]))
-# or
-print('The result is {what}'.format(what=series[3:5]))
+def isPalindrome(w):
+    return w == w[::-1]
+def isPalindrome(a):
+    return a == a[::-1]
+
+a = "windows"
+ab = isPalindrome(a)
+
+if ab:
+  print("Yes")
+
+else:
+   print("No")
+
+  
+w = "malayalam"
+ans = isPalindrome(w)
+
+  
+if ans:
+    print("Yes")
+else:
+    print("No")
