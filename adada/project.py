@@ -12,3 +12,5 @@ rd.shuffle(l)
 for num in l:
     print(num)
 
+stock = [[i, j] for i in range(7) for j in range(i, 7)]
+print(stock)
