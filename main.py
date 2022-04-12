@@ -1,8 +1,8 @@
-# task 8 slice
-my_list = [3, 9, 27, 81, 243, 729, 2187]
-print('my_list[-1:] -> [2187]') 
-print('my_list[:] -> [3, 9, 27, 81, 243, 729, 2187]')
-print('my_list[2:-1:-3] -> []')
-print('my_list[2:0:-3] -> [27]')
-print('my_list[7]-> [list index out of range')
-
+#chess (log arith task1)
+k = 3
+n1 = 5 - k
+n2 = 5 + k
+a = (5 - k) * (5 + k)
+1 <= n1 <= 5
+0 <= k <= n2
+print(a)
