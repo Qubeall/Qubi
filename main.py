@@ -1,25 +1,4 @@
-# task 1 slice
+# task 3 slice
+print('What are the default values for start, stop and step?')
 
-def isPalindrome(w):
-    return w == w[::-1]
-def isPalindrome(a):
-    return a == a[::-1]
-
-a = "windows"
-ab = isPalindrome(a)
-
-if ab:
-  print("Yes")
-
-else:
-   print("No")
-
-  
-w = "malayalam"
-ans = isPalindrome(w)
-
-  
-if ans:
-    print("Yes")
-else:
-    print("No")
+print('[0:len(sequence):1]')
