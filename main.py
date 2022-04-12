@@ -1,4 +1,4 @@
-# task 6 slice
-nums = [n for n in range(0, 101)]
-numb = ([n for n in range (len(nums))] [::5])
-print (numb)
+# task 7 slice
+nums = [0, 1, 1, 2, 3, 5, 8]
+numb = (nums[0::1])
+print ('The anwser is [0::1]')
