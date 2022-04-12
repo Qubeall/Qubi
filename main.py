@@ -1,4 +1,8 @@
-# task 7 slice
-nums = [0, 1, 1, 2, 3, 5, 8]
-numb = (nums[0::1])
-print ('The anwser is [0::1]')
+# task 8 slice
+my_list = [3, 9, 27, 81, 243, 729, 2187]
+print('my_list[-1:] -> [2187]') 
+print('my_list[:] -> [3, 9, 27, 81, 243, 729, 2187]')
+print('my_list[2:-1:-3] -> []')
+print('my_list[2:0:-3] -> [27]')
+print('my_list[7]-> [list index out of range')
+
