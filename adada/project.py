@@ -14,3 +14,17 @@ for num in l:
 
 stock = [[i, j] for i in range(7) for j in range(i, 7)]
 print(stock)
+
+Денис
+Дима
+Ваня
+Дима
+Дима
+Лёха
+Вова
+Вадим
+Богдан
+Юра
+Антон
+Артем
+Костя
