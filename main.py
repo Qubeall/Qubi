@@ -1,7 +1,12 @@
-#ant work
-w = 3
-t = 19
-T = 100
-a = T//t
-z = w * a + w
-print(z)
+#always young
+
+
+n = 14
+
+if(n % 2 == 0):
+ print(n//2)
+elif(n == 1):
+ print(0)
+else:
+ print(n)
+ 
