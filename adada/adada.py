@@ -255,3 +255,92 @@ print(int('five'))  # OBJ type is ok but value inappropriate
 # if using parent name it will cover ALL exception in it
 # so 
 # RuntimeError will include both exceptions in it
+
+
+
+
+
+
+from time import perf_counter
+
+nums = [n for n in range(10000)]
+i = 0
+
+start = perf_counter()
+for n in nums:
+  
+  if n % 6 == 1 or n % 6 == 5:
+    print(n, 'possible prime')
+    i += 1
+print(i)
+print(perf_counter() - start, 'secs')
+  # else:
+  #   print(n, 'not prime')
+
+
+
+
+
+
+
+
+
+
+
+
+# Handling Exceptions
+
+# list
+# https://docs.python.org/3/library/exceptions.html
+
+a = 5
+b = 2
+
+print(a / b)  # work as expected
+
+
+a = 5
+b = 0
+
+print(a / b)  # ZeroDivision
+
+# solution
+try:
+  result = a / b
+except ZeroDivisionError as err:
+  print('0 Error', err)  # err is exception description
+else:
+  print('The result is ', result)
+finally:
+  print("Thank you for using the service")
+
+  
+a = 5
+b = 'five'
+
+print(a / b)  # TypeError
+
+# solution
+try:
+  result = a / b
+except ZeroDivisionError as err:
+  print('0 Error', err)  # err is exception description
+except TypeError as err:
+  print('T Error', err)  # err is exception description
+else:
+  print('The result is ', result)
+finally:
+  print("Thank you for using the service")
+
+# line num of exception
+import sys 
+e_type, e_object, e_traceback = sys.exc_info()
+e_line = e_traceback.tb_lineno
+
+
+# exception name
+# use __class__.__name__ called on err object
+
+# multiple exceptions
+# except (ZeroDivisionError, TypeError) as err:
+
