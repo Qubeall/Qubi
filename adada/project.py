@@ -27,26 +27,30 @@ print('Stock pieces: {}\n\
       Domino snake: [{}]\n\
              Status: {}'.\
              format(stock, computer, player, snake, next_one))
+
+
+print('='*70)
+
+print('Stock pieces: {}\n\
+Computer pieces: {}'.\
+      format(len(stock), (len(computer))))
+
+print('Snake:')
+print(snake)
+
+print('Your pieces:')
+
+for i, name in enumerate(player):
+  print(i + 1, name)
+
+status = next_one
+if status == 'computer':
+  print("Status: Computer is about to make a move. Press Enter to continue...")
   
+if status == 'player':
+  print("Status: It's your turn to make a move. Enter your command...")
 
 
-
-
-
-
-
-
-import random as rd
-
-l = [i for i in range(len(pieces))]
-
-rd.shuffle(l)
-
-for num in l:
-    print(num)
-
-stock = [[i, j] for i in range(7) for j in range(i, 7)]
-print(stock)
 
 Денис
 Дима
