@@ -1,52 +1,24 @@
-from random import randint, shuffle
+# 4 task 02
+nums = [n for n in range(5)]
+even = list(map(lambda x: x * 2, nums))
 
-stock = [[i,j] for i in range(7) for j in range(i,7)]
-doubles = stock [:-4:-2]
-on_hands = 7
+odd = [1, 3, 5, 7, 9]
 
+length = len(even)
 
-while not any([double in stock[:on_hands *2] for double in doubles]):
-  shuffle(stock)
+my_sum = []
+i = 0
+while i < length:
+    my_sum.append(even[i] + odd[i])
+    i = i + 1
 
+remainders = list(map(lambda x: x % 3, my_sum))
 
-for double in doubles:
-  if double in stock[:on_hands * 2]:
-    snake = stock.pop(stock.index(double))
-    break
-computer, player = stock[:on_hands - 1], stock[on_hands - 1:on_hands * 2 - 1]
-if randint(1, 2) == 2:
-  player, computer = computer, player
+onzero_remainders = list(filter(lambda x: x % 3, remainders))
 
-stock = stock[on_hands *2 - 1:]
-
-next_one = 'computer' if len(computer) > len(player) else 'player'
-
-print('Stock pieces: {}\n\
-    Computer pieces: {}\n\
-      Player pieces: {}\n\
-      Domino snake: [{}]\n\
-             Status: {}'.\
-             format(stock, computer, player, snake, next_one))
+print(my_sum)
+print(remainders)
+print(onzero_remainders)
 
 
-print('='*70)
-
-print('Stock pieces: {}\n\
-Computer pieces: {}'.\
-      format(len(stock), (len(computer))))
-
-print('Snake:')
-print(snake)
-
-print('Your pieces:')
-
-for i, name in enumerate(player):
-  print(i + 1, name)
-
-status = next_one
-if status == 'computer':
-  print("Status: Computer is about to make a move. Press Enter to continue...")
-  
-if status == 'player':
-  print("Status: It's your turn to make a move. Enter your command...")
 
