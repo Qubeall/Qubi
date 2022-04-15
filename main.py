@@ -1,17 +1,3 @@
-# 4 task 04
+# 4 task 06
 
-inputs =  [1, 2, 3, 4, 5]
-
-a = list(map(lambda x: x * 10, inputs))
-b = inputs * 10
-c = [10 * x for x in inputs]
-
-if a == c:
-  print('a and c perform the same task')
-if a == b:
-  print('a and b perform the same task')
-if b == c:
-  print('b and c perform the same task')
-  
-  
-
+print('The outputs for A is {}. And for B is {}'.format('[11, 13, 15, 17]', '[1, 2, 3, 4, 10, 11, 12, 13]'))
