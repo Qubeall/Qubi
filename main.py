@@ -1,33 +1,17 @@
-# 4 task 03
-from random import randint
+# 4 task 04
 
+inputs =  [1, 2, 3, 4, 5]
 
-names = ['Денис', 'Дима0', 'Ваня', 'Дима1', 'Дима2', 'Лёша', 'Вова', 'Вадим', 'Богда', 'Юра', 'Антон', 'Артём', 'Костя']
-names.sort()
+a = list(map(lambda x: x * 10, inputs))
+b = inputs * 10
+c = [10 * x for x in inputs]
 
-math = [randint(25, 50) for _ in range(len(names))]
-
-eng = [randint(25,50) for _ in range(len(names))]
-
-phys = [randint(25,50) for _ in range(len(names))]
-
-res = list(map(lambda x, y, z: x + y + z, math, eng, phys))
-
-
-enroll = []
-dont_pass = []
-for name, mark in zip(names, res):
-  if mark > 100:
-    enroll.append(name)
-    enroll.append(mark)
+if a == c:
+  print('a and c perform the same task')
+if a == b:
+  print('a and b perform the same task')
+if b == c:
+  print('b and c perform the same task')
+  
   
 
-print(f'You are admitted: {enroll}')
-print(30*'=')
-
-for name, mark in zip(names, res):
-  if mark < 100:
-    dont_pass.append(name)
-    dont_pass.append(mark)
-
-print(f'You are don\'t pass:{dont_pass}')
