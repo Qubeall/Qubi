@@ -28,5 +28,6 @@ print(30*'=')
 for name, mark in zip(names, res):
   if mark < 100:
     dont_pass.append(name)
+    dont_pass.append(mark)
 
 print(f'You are don\'t pass:{dont_pass}')
