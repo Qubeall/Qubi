@@ -1,24 +1,32 @@
-# 4 task 02
-nums = [n for n in range(5)]
-even = list(map(lambda x: x * 2, nums))
-
-odd = [1, 3, 5, 7, 9]
-
-length = len(even)
-
-my_sum = []
-i = 0
-while i < length:
-    my_sum.append(even[i] + odd[i])
-    i = i + 1
-
-remainders = list(map(lambda x: x % 3, my_sum))
-
-onzero_remainders = list(filter(lambda x: x % 3, remainders))
-
-print(my_sum)
-print(remainders)
-print(onzero_remainders)
+# 4 task 03
+from random import randint
 
 
+names = ['Денис', 'Дима0', 'Ваня', 'Дима1', 'Дима2', 'Лёша', 'Вова', 'Вадим', 'Богда', 'Юра', 'Антон', 'Артём', 'Костя']
+names.sort()
 
+math = [randint(25, 50) for _ in range(len(names))]
+
+eng = [randint(25,50) for _ in range(len(names))]
+
+phys = [randint(25,50) for _ in range(len(names))]
+
+res = list(map(lambda x, y, z: x + y + z, math, eng, phys))
+
+
+enroll = []
+dont_pass = []
+for name, mark in zip(names, res):
+  if mark > 100:
+    enroll.append(name)
+    enroll.append(mark)
+  
+
+print(f'You are admitted: {enroll}')
+print(30*'=')
+
+for name, mark in zip(names, res):
+  if mark < 100:
+    dont_pass.append(name)
+
+print(f'You are don\'t pass:{dont_pass}')
