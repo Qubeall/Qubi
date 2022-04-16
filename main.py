@@ -1,6 +1,12 @@
-# 5 task 01
-names = ['Denis', 'Dima0', 'Vanya', 'Dima1', 'Dima2', 'Leha', 'Vova', 'Vadim','Bogdan', 'Yura', 'Anton', 'Artyom',]
+# 5 task 03
+from random import randint
 
+month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-for i, name in enumerate(names, start=1):
-  print('Student {} > {}'.format(i, name))
+revenue = [randint(90000, 100_000) for n in range(12)]
+print(revenue)
+
+cost = [randint(50000,60000) for n in range(12)]
+print(cost)
+
+profit
