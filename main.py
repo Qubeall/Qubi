@@ -1,27 +1,17 @@
-#5 task 04
+#5 task 05
 
+print('What will be the next output?')
 
+print('There will be an exception "StopIteration"')
 
-print('Введите 3 числa для первого вектора:')
-x = (int(input()))
-y = (int(input()))
-z = (int(input()))
-     
-v1 = (x, y ,z)
+letters = ['A', 'B', 'C']
 
+my_iterator = iter(letters)
 
-print('Введите 3 числа для второго векотра:')
-a = (int(input()))
-b = (int(input()))
-c = (int(input()))
-
-v2 = (a, b, c)
-
-
-
-print('v1 =', v1, '& v2 =', v2) 
-
-print('Сумма вектров равна:')
-result = map(lambda x, y: x + y, v1, v2) 
-
-print('\n'.join(map(str, result)))
+print(next(my_iterator))
+# 'A'
+print(next(my_iterator))
+# 'B'
+print(next(my_iterator))
+# 'C'
+print(next(my_iterator)) 
