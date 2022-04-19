@@ -1,3 +1,4 @@
-#7 task 06
+#7 task 05
+print('What happens with the program if there is an exception?')
 
-print('ZeroDivisionError и FloatingPointError имеют общее имя ArithmeticError')
+print('The anwser is D')
