@@ -1,6 +1,7 @@
-#7 task 01
-print('If we use an undefined variable, we will have NameError')
-
-a = 2
-b = a - c
-print(b)
+#7 task 02
+print('Line 2 will throw an exception')
+a = int("5")
+print(a + "5")
+print(a * "5")
+print(ValueError)
+# In line 2
