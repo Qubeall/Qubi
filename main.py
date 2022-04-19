@@ -1,5 +1,10 @@
-#7 task 03
+#7 task 04
 
-print('ZeroDivisionError -> print(7 - 7 / 0 + 1)')
-print("ValueError -> int('twenty')")
-print('TypeError -> len(42)')
+first = input('Введите первое число:')
+second = input('Введите второе число:')
+if first > second:
+  print("Первое число победило")
+elif second > first:
+  print("Победило второе число")
+else:
+  print('Ничья')
