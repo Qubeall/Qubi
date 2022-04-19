@@ -1,7 +1,5 @@
-#7 task 02
-print('Line 2 will throw an exception')
-a = int("5")
-print(a + "5")
-print(a * "5")
-print(ValueError)
-# In line 2
+#7 task 03
+
+print('ZeroDivisionError -> print(7 - 7 / 0 + 1)')
+print("ValueError -> int('twenty')")
+print('TypeError -> len(42)')
