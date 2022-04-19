@@ -1,20 +1,19 @@
-#6 task 02
+#6 task 03
 
-from time import perf_counter
+def get_prime_divs(n):
+  res = []
+  for i in range(2, int(n ** 0.5) + 1):
+    while not n % i:
+      if not i in res:
+        res.append(i)
+      n //= i
+    if n < i:
+      break
+  if n > 1:
+     res.append(n)
+  return res
 
-from math import ceil, sqrt
+n = 1000
+print(get_prime_divs(n))
 
-def get_all_dividers(num):
 
-    first_half_dividers = [x for x in range(1, ceil(sqrt(num)) + 1)
-                           if num % x == 0]
-
-    second_half_dividers = [int(num / x) for x in reversed(first_half_dividers)
-                            if int(num / x) not in first_half_dividers]
-
-    return first_half_dividers + second_half_dividers
-
-print(get_all_dividers(1000_000_000)) 
-
-start = perf_counter()
-print(perf_counter() - start)
