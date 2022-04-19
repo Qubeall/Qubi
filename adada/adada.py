@@ -693,7 +693,13 @@ print(max_key)
 
 
 
+my_dict = {
+  'a': 5, 
+  'b': 8,
+  'c': 10
+}
 
+print([k for k, _ in my_dict.items()][:2])
 
 
 
