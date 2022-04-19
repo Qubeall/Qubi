@@ -445,25 +445,25 @@ example_exceptions_5(10)
 
 from time import perf_counter
 
-# def get_primes(n):
-#   primes = [2, 3]
-#   for i in range(5, n + 1):
-#     if i % 6 in (1, 5):
-#       prime = True
-#       for j in range(2, int(i ** 0.5) + 1):
-#         if not i % j:
-#           prime = False
-#           break
-#       if prime:
-#         primes.append(i)
-#   return primes
+def get_primes(n):
+ primes = [2, 3]
+ for i in range(5, n + 1):
+   if i % 6 in (1, 5):
+     prime = True
+     for j in range(2, int(i ** 0.5) + 1):
+       if not i % j:
+         prime = False
+         break
+   if prime: 
+      primes.append(i)
+ return primes
 
 
-# n = 100_000
-# start = perf_counter()
-# primes = get_primes(n)
-# print(perf_counter() - start)
-# print(primes)
+n = 100_000
+start = perf_counter()
+primes = get_primes(n)
+print(perf_counter() - start)
+print(primes)
 
 
 def get_prime_divs(n):
@@ -663,7 +663,7 @@ print(freq_counter.most_common(2))
 
 
 
-#Dictionary
+#Dictionary reverse
 my_dict = {
   1: 'a',
   2: 'b'
@@ -676,3 +676,17 @@ print(rev_dict)
 
 
 
+stock = [[2, 1], [2, 3]]
+
+weights = {
+  0: 7,
+  1: 8
+}
+
+max_value = max(weights.values())
+print(max_value)
+
+rev_weights = {v: k for k, v in weights.items()}
+
+max_key = stock[rev_weights[max_value]]
+print(max_key)

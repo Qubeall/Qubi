@@ -1,37 +1,17 @@
-# 5 task 03
-from random import randint
-
-month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-revenue = [randint(90000, 100_000) for n in range(12)]
-cost = [randint(10000,110_000) for n in range(12)]
-
-def profit():
-  calculate_profit = list(map(lambda x, y: x - y, revenue, cost))
-  return calculate_profit
-profit = profit()
+# 6 task 01
 
 
-def procent():
-  calculate_procent = list(map(lambda x, y: (x/y)*100//1, profit, revenue)) 
-  return calculate_procent
-procent = procent()
+from math import ceil, sqrt
 
+def get_all_dividers(num):
 
-nums =  procent
-criteria = {50: 'great',
-            25: 'decent',
-            0: 'need follow up',
-            -100: 'critical'
-            }
+    first_half_dividers = [x for x in range(1, ceil(sqrt(num)) + 1)
+                           if num % x == 0]
 
-words  = []
+    second_half_dividers = [int(num / x) for x in reversed(first_half_dividers)
+                            if int(num / x) not in first_half_dividers]
 
-for num in nums:
-  for crit in criteria:
-    if num > crit:
-      words.append(criteria[crit])
-      break
+    return first_half_dividers + second_half_dividers
 
+print(get_all_dividers(1000)) 
 
-for months, profits, procents, word in zip(month, profit, procent, words):
-  print(months,':', profits, procents, '%',  '->', word)
