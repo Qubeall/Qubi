@@ -1,6 +1,7 @@
-from random import randint, shuffle
+from random import randint, shuffle, choice
 from functools import reduce 
 import re
+
 
 stock = [[i,j] for i in range(7) for j in range(i,7)]
 doubles = stock [:-4:-2]
@@ -58,13 +59,41 @@ class BadUserInputError(Exception):
   def __str__(self):
     return 'Involid input. Please try again.'
 
+class IllegalMoveError(Exception):
+  def __str__(self):
+    return 'Illegal move. Please try again.'
+
 class Domino:
   def __init__(self):
     self.stock = [[i, j] for i in range(7) for j in range(i, 7)]
     self.doubles = self.stock[:-4:-2]
     self.snake = []
+    self.snake_left_end = None
+    self.snake_right_end = None
+    self.snake_ends = None
     self.computer = []
     self.player = []
+
+  # USER ENTRY
+  def get_command(self):
+    while True:
+      command = input()
+      if command == '':
+          return self.get_ai_command()
+      try:
+          if re.match(r'^-?\d{,2}$', command) is None or abs(int(command))  > len(self.player):
+            raise BadUserInputError
+            command = int(command)
+            if command > 0 and self.snake_right_end not in self.player[command - 1 ] or \
+            command < 0 and self.snake__left_end not in self.player[abs(command) - 1]:
+              raise IllegalMoveError
+            return  command
+      except BadUserInputError as err:
+            print(err)
+      except IllegalMoveError as err:
+            print(err)
+
+  
 
   def get_distribution(self, each=7):
     while not any([double in self.stock[:each * 2] for double in self.doubles]):
@@ -202,41 +231,7 @@ print(words)
 
 
 
-# 5 task 03
-from random import randint
 
-month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-revenue = [randint(90000, 100_000) for n in range(12)]
-cost = [randint(10000,110_000) for n in range(12)]
-
-def profit():
-  calculate_profit = list(map(lambda x, y: x - y, revenue, cost))
-  return calculate_profit
-
-profit = profit()
-print(profit)
-
-difference_of_profits = ['over 50 %','25% - 50%', '0% - 25%', 'less than 0%']
-wording = ['great', 'decent', 'need follow up', ' critical']
-  
-
-def procent():
-  calculate_procent = list(map(lambda x: x - y , profit, )) 
-  return calculate_procent
-
-procent = procent()
-print(procent)
-
-difference = []
-
-
-for months, profits, procents in zip(month, profit, procent):
-  print(months, profits, procents,'%')
-
-
-  jan 1000 --
-  feb 1500 +50% (1500 - 1000 / 1000)
-  mar 2250 +50% (2250 - 1500 / 1500)
 
   
   
