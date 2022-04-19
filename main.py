@@ -1,22 +1,27 @@
-#6 task 04
+#5 task 04
 
 
-from time import perf_counter
 
-def get_prime_divs(n):
-  res = []
-  for i in range(2, int(n ** 0.5) + 1):
-    while not n % i:
-      if not i in res:
-        res.append(i)
-      n //= i
-    if n < i:
-      break
-  if n > 1:
-     res.append(n)
-  return res
+print('Введите 3 числa для первого вектора:')
+x = (int(input()))
+y = (int(input()))
+z = (int(input()))
+     
+v1 = (x, y ,z)
 
-n = 1000_000_000
-start = perf_counter()
-print(get_prime_divs(n))
-print(perf_counter() - start)
+
+print('Введите 3 числа для второго векотра:')
+a = (int(input()))
+b = (int(input()))
+c = (int(input()))
+
+v2 = (a, b, c)
+
+
+
+print('v1 =', v1, '& v2 =', v2) 
+
+print('Сумма вектров равна:')
+result = map(lambda x, y: x + y, v1, v2) 
+
+print('\n'.join(map(str, result)))
