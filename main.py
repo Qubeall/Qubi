@@ -1,4 +1,7 @@
-#6 task 03
+#6 task 04
+
+
+from time import perf_counter
 
 def get_prime_divs(n):
   res = []
@@ -13,7 +16,7 @@ def get_prime_divs(n):
      res.append(n)
   return res
 
-n = 1000
+n = 1000_000_000
+start = perf_counter()
 print(get_prime_divs(n))
-
-
+print(perf_counter() - start)
