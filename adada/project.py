@@ -1,5 +1,9 @@
-from random import randint, shuffle, choice
-from functools import reduce 
+# stage 5
+
+from random import randint, shuffle, choice, choices
+from functools import reduce
+from collections import Counter
+import itertools
 import re
 
 
@@ -97,18 +101,26 @@ class Domino:
 
   # AI MOVE COMPUTATION
   def get_ai_command(self):
-      move_options = [opt for opt in self.computer if opt[0] in self.snake_ends or opt[1] in self.snake_ends]
-      if move_options:
-         move_choice = choice(move_options)
-         command_right: int = self.computer.index(move_choice) + 1
-         command_left: int = command_right * - 1
-         if all((self.snake_right_end in move_choice, self.snake_left_end in move_choice)):
+      all_options = [opt for opt in self.computer if opt[0] in self.snake_ends or opt[1] in self.snake_ends]
+      frequencies = Counter(list(itertools.chain.from_iterable(self.computer + self.snake)))
+      options_weights = [frequencies[opt[0]] + frequencies[opt[1]] for opt in all_options]
+      highest_score_options = [opt for opt, freq in zip(all_options, options_weights) if freq == max(options_weights)]
+      if all_options:
+          if self.diff == 1:
+              move_choice = choice(all_options)
+          if self.diff == 2:
+              move_choice = choices(all_options, options_weights)[0]
+          if self.diff == 3:
+              move_choice = choice(highest_score_options)
+          command_right: int = self.computer.index(move_choice) + 1
+          command_left: int = command_right * - 1
+          if all((self.snake_right_end in move_choice, self.snake_left_end in move_choice)):
               command = choice((command_right, command_left))
-         elif self.snake_right_end in move_choice:
+          elif self.snake_right_end in move_choice:
               command = command_right
-         else: command = command_left
+          else: command = command_left
       else:
-         command = 0
+          command = 0
       return command
 
 
@@ -214,6 +226,7 @@ enumerate(list(map(str, ([p for p in self.player]))))))))
 
 my_game = Domino()
 my_game.main()
+
 
      
 
