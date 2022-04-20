@@ -259,35 +259,6 @@ print(int('five'))  # OBJ type is ok but value inappropriate
 
 
 
-
-
-from time import perf_counter
-
-nums = [n for n in range(10000)]
-i = 0
-
-start = perf_counter()
-for n in nums:
-  
-  if n % 6 == 1 or n % 6 == 5:
-    print(n, 'possible prime')
-    i += 1
-print(i)
-print(perf_counter() - start, 'secs')
-  # else:
-  #   print(n, 'not prime')
-
-
-
-
-
-
-
-
-
-
-
-
 # Handling Exceptions
 
 # list
@@ -438,6 +409,30 @@ def example_exceptions_5(x):
 example_exceptions_5(10)
 
 
+
+
+
+
+
+
+
+
+
+from time import perf_counter
+
+nums = [n for n in range(10000)]
+i = 0
+
+start = perf_counter()
+for n in nums:
+  
+  if n % 6 == 1 or n % 6 == 5:
+    print(n, 'possible prime')
+    i += 1
+print(i)
+print(perf_counter() - start, 'secs')
+  # else:
+  #   print(n, 'not prime')
 
 
 
@@ -743,3 +738,58 @@ with open('checked.txt', 'w', encoding='utf-8') as file:
 checked = ['this\n', 'that\n', 'that over there\n']
 with open('checked.txt', 'w', encoding='utf-8') as file:
     file.writelines(checked)  # writes all in the list each on new line
+
+
+
+
+
+# DAY 9
+# -> Start Hacker project
+# -> Socket Module
+# -> Custom Generators
+
+
+'hello'.encode()
+data = data.decode()
+
+import socket
+
+
+with socket.socket() as client_socket:
+
+  hostname = '127.0.0.1'
+  port = 5000
+  
+  client_socket.connect((hostname, port))
+  
+  data = 'Wake up Neo'
+  
+  client_socket.send(data.encode())
+  
+  buffer = 1024
+  response = client_socket.recv(buffer)
+  response = response.decode()
+  
+  print(response)
+
+import socket
+
+# 2 Вариант
+with socket.socket() as client_socket:
+
+  hostname = '127.0.0.1'  # str
+  port = 5000  # int
+
+  address = (hostname, port)
+  
+  client_socket.connect(address)  # one arg!!
+  
+  data = 'This is my test string'
+  
+  client_socket.send(data.encode())  # converting to bytes
+  
+  buffer = 1024  # response limit
+  response = client_socket.recv(buffer)
+  response = response.decode()  # converting back to rea
+
+  print(response)
