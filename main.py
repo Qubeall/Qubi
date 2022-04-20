@@ -1,11 +1,14 @@
-#8 task 03
+#8 task 04
 
+def den():
+    try:
+        a = int(input("Enter number: "))
+        b = int(input("Enter number: "))
+        z = a/b
+    except ZeroDivisionError:
+        print ("The Error!")
+        den()
+    else:
+        print (z)
 
-try:
- print("Hello, stranger!") 
-except NameError:
-	print("Hello,", name)
-else:
- print("What a beautiful name you have!")
-finally:
- print("Hope to see you soon!")
+den()
